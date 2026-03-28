@@ -1,12 +1,47 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Plus_Jakarta_Sans, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "@/components/ui/ThemeProvider";
+import Navbar from "@/components/layout/Navbar";
 
-const inter = Inter({ subsets: ["latin"] });
+const jakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--font-jakarta",
+  display: "swap",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
+
+const mono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
-  title: "Portfolio",
-  description: "My personal portfolio",
+  title: "Suruchi Bista — Data Analyst & AI Enthusiast",
+  description:
+    "Portfolio of Suruchi Bista — Data & BI Analyst, 2× Hackathon Winner, Microsoft and AWS Certified. Turning messy data into actionable insights.",
+  keywords: [
+    "data analyst",
+    "business intelligence",
+    "Power BI",
+    "Python",
+    "SQL",
+    "machine learning",
+    "Suruchi Bista",
+  ],
+  authors: [{ name: "Suruchi Bista" }],
+  openGraph: {
+    title: "Suruchi Bista — Data Analyst & AI Enthusiast",
+    description:
+      "Turning messy data into actionable insights and building intelligent systems.",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
@@ -15,8 +50,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={`${jakarta.variable} ${inter.variable} ${mono.variable} antialiased`}
+      >
+        <ThemeProvider>
+          <Navbar />
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
