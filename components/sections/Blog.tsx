@@ -18,7 +18,7 @@ export default function Blog() {
           transition={{ duration: 0.5 }}
           className="flex items-center gap-3 mb-12"
         >
-          <span className="text-xs font-mono text-accent-indigo uppercase tracking-widest">07 — Blog</span>
+          <span className="text-xs font-mono text-[var(--accent-rose)] uppercase tracking-widest">07 — Blog</span>
           <div className="flex-1 h-px bg-[var(--border)]" />
         </motion.div>
 
@@ -29,10 +29,10 @@ export default function Blog() {
           className="glass rounded-2xl p-10 md:p-16 text-center relative overflow-hidden"
         >
           {/* Background glow */}
-          <div className="absolute inset-0 bg-gradient-to-br from-accent-blue/5 via-transparent to-accent-violet/5 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-br from-[var(--accent-rose)]/5 via-transparent to-[var(--accent-orchid)]/5 pointer-events-none" />
 
           <div className="relative z-10 flex flex-col items-center gap-5">
-            <div className="w-16 h-16 rounded-2xl bg-gradient-accent flex items-center justify-center shadow-xl shadow-accent-indigo/20">
+            <div className="w-16 h-16 rounded-2xl bg-gradient-accent flex items-center justify-center shadow-xl shadow-[var(--accent-rose)]/20">
               <BookOpen size={26} className="text-white" />
             </div>
 
@@ -46,8 +46,8 @@ export default function Blog() {
               </p>
             </div>
 
-            <div className="flex items-center gap-2 px-5 py-2.5 rounded-full border border-accent-indigo/30 bg-accent-indigo/10 text-accent-indigo text-sm font-medium">
-              <span className="w-1.5 h-1.5 rounded-full bg-accent-indigo animate-pulse" />
+            <div className="flex items-center gap-2 px-5 py-2.5 rounded-full border border-[var(--accent-rose)]/30 bg-[var(--accent-rose)]/10 text-[var(--accent-rose)] text-sm font-medium">
+              <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent-rose)] animate-pulse" />
               Coming Soon
               <ArrowRight size={14} />
             </div>

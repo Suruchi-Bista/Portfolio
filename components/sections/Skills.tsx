@@ -12,6 +12,13 @@ const iconMap: Record<string, React.ElementType> = {
   Cloud,
 };
 
+const cardAccents = [
+  "hover:border-[var(--accent-rose)]/40",
+  "hover:border-[var(--accent-orchid)]/40",
+  "hover:border-[var(--accent-teal)]/40",
+  "hover:border-[var(--accent-rose)]/40",
+];
+
 export default function Skills() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
@@ -26,7 +33,7 @@ export default function Skills() {
           transition={{ duration: 0.5 }}
           className="flex items-center gap-3 mb-12"
         >
-          <span className="text-xs font-mono text-accent-indigo uppercase tracking-widest">02 — Skills</span>
+          <span className="text-xs font-mono text-[var(--accent-rose)] uppercase tracking-widest">02 — Skills</span>
           <div className="flex-1 h-px bg-[var(--border)]" />
         </motion.div>
 
@@ -50,11 +57,11 @@ export default function Skills() {
                 initial={{ opacity: 0, y: 24 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: 0.15 + i * 0.1 }}
-                className="glass rounded-xl p-6 hover:border-accent-indigo/30 transition-all group"
+                className={`glass rounded-xl p-6 ${cardAccents[i]} transition-all group`}
               >
                 {/* Category header */}
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-9 h-9 rounded-lg bg-gradient-accent flex items-center justify-center shadow-lg shadow-accent-indigo/20 group-hover:scale-110 transition-transform">
+                  <div className="w-9 h-9 rounded-lg bg-gradient-accent flex items-center justify-center shadow-lg shadow-[var(--accent-rose)]/20 group-hover:scale-110 transition-transform">
                     {Icon && <Icon size={16} className="text-white" />}
                   </div>
                   <h3 className="font-jakarta font-semibold text-[var(--text-primary)]">
@@ -67,7 +74,7 @@ export default function Skills() {
                   {group.skills.map((skill) => (
                     <span
                       key={skill}
-                      className="px-3 py-1 rounded-full text-xs font-medium bg-[var(--surface-2)] border border-[var(--border)] text-[var(--text-secondary)] hover:border-accent-indigo/50 hover:text-accent-indigo transition-all cursor-default"
+                      className="px-3 py-1 rounded-full text-xs font-medium bg-[var(--surface-2)] border border-[var(--border)] text-[var(--text-secondary)] hover:border-[var(--accent-orchid)]/50 hover:text-[var(--accent-orchid)] transition-all cursor-default"
                     >
                       {skill}
                     </span>

@@ -19,7 +19,7 @@ export default function Certifications() {
           transition={{ duration: 0.5 }}
           className="flex items-center gap-3 mb-12"
         >
-          <span className="text-xs font-mono text-accent-indigo uppercase tracking-widest">06 — Certifications</span>
+          <span className="text-xs font-mono text-[var(--accent-rose)] uppercase tracking-widest">06 — Certifications</span>
           <div className="flex-1 h-px bg-[var(--border)]" />
         </motion.div>
 
@@ -39,7 +39,7 @@ export default function Certifications() {
               initial={{ opacity: 0, y: 24 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.15 + i * 0.08 }}
-              className="glass rounded-xl p-5 hover:border-accent-indigo/30 transition-all group text-center"
+              className="glass rounded-xl p-5 hover:border-[var(--accent-orchid)]/30 transition-all group text-center"
             >
               {/* Badge circle */}
               <div className={`w-14 h-14 rounded-full bg-gradient-to-br ${cert.color} flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:scale-110 transition-transform`}>
@@ -53,7 +53,7 @@ export default function Certifications() {
                 <h3 className="font-jakarta font-semibold text-[var(--text-primary)] text-sm leading-tight">
                   {cert.name}
                 </h3>
-                <p className="text-xs text-accent-indigo font-medium">{cert.provider}</p>
+                <p className="text-xs text-[var(--accent-orchid)] font-medium">{cert.provider}</p>
                 <p className="text-xs text-[var(--text-muted)]">{cert.year}</p>
               </div>
             </motion.div>

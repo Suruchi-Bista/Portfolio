@@ -10,17 +10,18 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        navy: {
-          950: "#05080f",
-          900: "#0a0f1e",
-          800: "#0f1629",
-          700: "#141e35",
-          600: "#1e2d4a",
+        plum: {
+          950: "#0a0612",
+          900: "#0f0a18",
+          800: "#160f22",
+          700: "#1e1530",
+          600: "#2e2342",
         },
         accent: {
-          blue: "#3b82f6",
-          indigo: "#6366f1",
+          rose: "#ec4899",
+          orchid: "#a855f7",
           violet: "#8b5cf6",
+          teal: "#2dd4bf",
         },
       },
       fontFamily: {
@@ -29,8 +30,9 @@ const config: Config = {
         mono: ["var(--font-mono)", "monospace"],
       },
       backgroundImage: {
-        "gradient-accent": "linear-gradient(135deg, #3b82f6, #8b5cf6)",
-        "gradient-accent-h": "linear-gradient(90deg, #3b82f6, #8b5cf6)",
+        "gradient-accent": "linear-gradient(135deg, #ec4899, #a855f7)",
+        "gradient-accent-h": "linear-gradient(90deg, #ec4899, #a855f7)",
+        "gradient-accent-teal": "linear-gradient(135deg, #a855f7, #2dd4bf)",
       },
       keyframes: {
         fadeIn: {

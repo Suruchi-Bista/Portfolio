@@ -18,7 +18,7 @@ function FeaturedCard({ project, index }: { project: (typeof featuredProjects)[0
       initial={{ opacity: 0, y: 32 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6, delay: index * 0.12 }}
-      className="glass rounded-2xl overflow-hidden hover:border-accent-indigo/40 transition-all group"
+      className="glass rounded-2xl overflow-hidden hover:border-[var(--accent-rose)]/40 transition-all group"
     >
       {/* Cover image */}
       <div className="relative h-52 bg-[var(--surface-2)] overflow-hidden">
@@ -30,15 +30,15 @@ function FeaturedCard({ project, index }: { project: (typeof featuredProjects)[0
             className="object-cover group-hover:scale-105 transition-transform duration-500"
           />
         ) : (
-          <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-navy-800 to-navy-700">
+          <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-plum-800 to-plum-700">
             <span className="font-jakarta font-bold text-4xl gradient-text opacity-30">
               {project.title.charAt(0)}
             </span>
           </div>
         )}
-        <div className="absolute inset-0 bg-gradient-to-t from-navy-900/80 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-plum-900/80 to-transparent" />
         {project.award && (
-          <div className="absolute top-3 left-3 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-accent-indigo/90 text-white text-xs font-medium backdrop-blur-sm">
+          <div className="absolute top-3 left-3 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[var(--accent-rose)]/90 text-white text-xs font-medium backdrop-blur-sm">
             <Trophy size={11} />
             {project.award}
           </div>
@@ -51,7 +51,7 @@ function FeaturedCard({ project, index }: { project: (typeof featuredProjects)[0
           <h3 className="font-jakarta font-bold text-xl text-[var(--text-primary)] mb-1">
             {project.title}
           </h3>
-          <p className="text-sm text-accent-indigo font-medium">{project.subtitle}</p>
+          <p className="text-sm text-[var(--accent-orchid)] font-medium">{project.subtitle}</p>
         </div>
 
         <p className="text-sm text-[var(--text-secondary)] leading-relaxed line-clamp-2">
@@ -75,7 +75,7 @@ function FeaturedCard({ project, index }: { project: (typeof featuredProjects)[0
           {project.tags.slice(0, 4).map((tag) => (
             <span
               key={tag}
-              className="px-2 py-0.5 rounded-full text-xs bg-accent-indigo/10 text-accent-indigo border border-accent-indigo/20"
+              className="px-2 py-0.5 rounded-full text-xs bg-[var(--accent-orchid)]/10 text-[var(--accent-orchid)] border border-[var(--accent-orchid)]/20"
             >
               {tag}
             </span>
@@ -91,7 +91,7 @@ function FeaturedCard({ project, index }: { project: (typeof featuredProjects)[0
         <div className="flex items-center gap-3 pt-1">
           <Link
             href={`/projects/${project.slug}`}
-            className="flex items-center gap-1.5 text-sm font-semibold text-[var(--text-primary)] hover:text-accent-indigo transition-colors"
+            className="flex items-center gap-1.5 text-sm font-semibold text-[var(--text-primary)] hover:text-[var(--accent-rose)] transition-colors"
           >
             Case Study <ArrowUpRight size={14} />
           </Link>
@@ -121,7 +121,7 @@ function SecondaryCard({ project, index }: { project: (typeof secondaryProjects)
       initial={{ opacity: 0, y: 24 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.5, delay: index * 0.08 }}
-      className="glass rounded-xl p-5 hover:border-accent-indigo/30 transition-all group"
+      className="glass rounded-xl p-5 hover:border-[var(--accent-orchid)]/30 transition-all group"
     >
       <div className="flex items-start justify-between mb-3">
         <div className="flex-1">
@@ -129,7 +129,7 @@ function SecondaryCard({ project, index }: { project: (typeof secondaryProjects)
             {project.title}
           </h3>
           {project.award && (
-            <span className="inline-flex items-center gap-1 text-xs text-accent-violet font-medium">
+            <span className="inline-flex items-center gap-1 text-xs text-[var(--accent-rose)] font-medium">
               <Trophy size={10} /> {project.award}
             </span>
           )}
@@ -147,7 +147,7 @@ function SecondaryCard({ project, index }: { project: (typeof secondaryProjects)
           )}
           <Link
             href={`/projects/${project.slug}`}
-            className="text-[var(--text-muted)] hover:text-accent-indigo transition-colors"
+            className="text-[var(--text-muted)] hover:text-[var(--accent-rose)] transition-colors"
           >
             <ArrowUpRight size={16} />
           </Link>
@@ -186,7 +186,7 @@ export default function Projects() {
           transition={{ duration: 0.5 }}
           className="flex items-center gap-3 mb-12"
         >
-          <span className="text-xs font-mono text-accent-indigo uppercase tracking-widest">03 — Projects</span>
+          <span className="text-xs font-mono text-[var(--accent-rose)] uppercase tracking-widest">03 — Projects</span>
           <div className="flex-1 h-px bg-[var(--border)]" />
         </motion.div>
 

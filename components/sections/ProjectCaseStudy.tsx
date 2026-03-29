@@ -23,7 +23,7 @@ export default function ProjectCaseStudy({ project }: { project: Project }) {
         >
           <Link
             href="/#projects"
-            className="inline-flex items-center gap-2 text-sm text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors mb-10"
+            className="inline-flex items-center gap-2 text-sm text-[var(--text-muted)] hover:text-[var(--accent-rose)] transition-colors mb-10"
           >
             <ArrowLeft size={14} /> All Projects
           </Link>
@@ -38,8 +38,8 @@ export default function ProjectCaseStudy({ project }: { project: Project }) {
         >
           {project.award && (
             <div className="flex items-center gap-2 mb-4">
-              <Trophy size={14} className="text-accent-indigo" />
-              <span className="text-sm text-accent-indigo font-medium">{project.award}</span>
+              <Trophy size={14} className="text-[var(--accent-rose)]" />
+              <span className="text-sm text-[var(--accent-rose)] font-medium">{project.award}</span>
             </div>
           )}
           <h1 className="font-jakarta font-bold text-4xl md:text-5xl text-[var(--text-primary)] mb-3 leading-tight">
@@ -52,7 +52,7 @@ export default function ProjectCaseStudy({ project }: { project: Project }) {
             {project.tags.map((tag) => (
               <span
                 key={tag}
-                className="px-3 py-1 rounded-full text-sm bg-accent-indigo/10 text-accent-indigo border border-accent-indigo/20"
+                className="px-3 py-1 rounded-full text-sm bg-[var(--accent-orchid)]/10 text-[var(--accent-orchid)] border border-[var(--accent-orchid)]/20"
               >
                 {tag}
               </span>
@@ -66,7 +66,7 @@ export default function ProjectCaseStudy({ project }: { project: Project }) {
                 href={project.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-4 py-2 rounded-lg border border-[var(--border)] text-sm text-[var(--text-secondary)] hover:border-accent-indigo/50 hover:text-[var(--text-primary)] transition-all"
+                className="flex items-center gap-2 px-4 py-2 rounded-lg border border-[var(--border)] text-sm text-[var(--text-secondary)] hover:border-[var(--accent-orchid)]/50 hover:text-[var(--text-primary)] transition-all"
               >
                 <GithubIcon size={16} /> View Code
               </a>
@@ -110,7 +110,7 @@ export default function ProjectCaseStudy({ project }: { project: Project }) {
         >
           {project.highlights.map((h) => (
             <div key={h} className="glass rounded-xl p-4 text-center">
-              <p className="font-mono text-sm font-semibold gradient-text">{h}</p>
+              <p className="font-mono text-sm font-semibold gradient-text-warm">{h}</p>
             </div>
           ))}
         </motion.div>
@@ -124,7 +124,7 @@ export default function ProjectCaseStudy({ project }: { project: Project }) {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <h2 className="font-jakarta font-bold text-2xl text-[var(--text-primary)] mb-3 flex items-center gap-2">
-              <span className="text-accent-indigo text-base font-mono">01</span> The Problem
+              <span className="text-[var(--accent-rose)] text-base font-mono">01</span> The Problem
             </h2>
             <p className="text-[var(--text-secondary)] leading-relaxed">{project.problem}</p>
           </motion.div>
@@ -136,7 +136,7 @@ export default function ProjectCaseStudy({ project }: { project: Project }) {
             transition={{ duration: 0.5, delay: 0.25 }}
           >
             <h2 className="font-jakarta font-bold text-2xl text-[var(--text-primary)] mb-3 flex items-center gap-2">
-              <span className="text-accent-indigo text-base font-mono">02</span> My Approach
+              <span className="text-[var(--accent-orchid)] text-base font-mono">02</span> My Approach
             </h2>
             <p className="text-[var(--text-secondary)] leading-relaxed">{project.approach}</p>
           </motion.div>
@@ -148,12 +148,12 @@ export default function ProjectCaseStudy({ project }: { project: Project }) {
             transition={{ duration: 0.5, delay: 0.3 }}
           >
             <h2 className="font-jakarta font-bold text-2xl text-[var(--text-primary)] mb-4 flex items-center gap-2">
-              <span className="text-accent-indigo text-base font-mono">03</span> Key Results
+              <span className="text-[var(--accent-teal)] text-base font-mono">03</span> Key Results
             </h2>
             <ul className="space-y-3">
               {project.results.map((r) => (
                 <li key={r} className="flex items-start gap-3 text-[var(--text-secondary)]">
-                  <CheckCircle2 size={18} className="text-accent-indigo flex-shrink-0 mt-0.5" />
+                  <CheckCircle2 size={18} className="text-[var(--accent-teal)] flex-shrink-0 mt-0.5" />
                   {r}
                 </li>
               ))}
@@ -168,7 +168,7 @@ export default function ProjectCaseStudy({ project }: { project: Project }) {
               transition={{ duration: 0.5, delay: 0.35 }}
             >
               <h2 className="font-jakarta font-bold text-2xl text-[var(--text-primary)] mb-4 flex items-center gap-2">
-                <span className="text-accent-indigo text-base font-mono">04</span> Gallery
+                <span className="text-[var(--accent-rose)] text-base font-mono">04</span> Gallery
               </h2>
               <div className="grid md:grid-cols-2 gap-4">
                 {project.images
@@ -193,10 +193,10 @@ export default function ProjectCaseStudy({ project }: { project: Project }) {
           {prev ? (
             <Link
               href={`/projects/${prev.slug}`}
-              className="glass rounded-xl p-4 hover:border-accent-indigo/30 transition-all group"
+              className="glass rounded-xl p-4 hover:border-[var(--accent-rose)]/30 transition-all group"
             >
-              <p className="text-xs text-[var(--text-muted)] mb-1">← Previous</p>
-              <p className="text-sm font-semibold text-[var(--text-primary)] group-hover:text-accent-indigo transition-colors">
+              <p className="text-xs text-[var(--text-muted)] mb-1">&larr; Previous</p>
+              <p className="text-sm font-semibold text-[var(--text-primary)] group-hover:text-[var(--accent-rose)] transition-colors">
                 {prev.title}
               </p>
             </Link>
@@ -204,10 +204,10 @@ export default function ProjectCaseStudy({ project }: { project: Project }) {
           {next ? (
             <Link
               href={`/projects/${next.slug}`}
-              className="glass rounded-xl p-4 hover:border-accent-indigo/30 transition-all group text-right"
+              className="glass rounded-xl p-4 hover:border-[var(--accent-orchid)]/30 transition-all group text-right"
             >
-              <p className="text-xs text-[var(--text-muted)] mb-1">Next →</p>
-              <p className="text-sm font-semibold text-[var(--text-primary)] group-hover:text-accent-indigo transition-colors">
+              <p className="text-xs text-[var(--text-muted)] mb-1">Next &rarr;</p>
+              <p className="text-sm font-semibold text-[var(--text-primary)] group-hover:text-[var(--accent-orchid)] transition-colors">
                 {next.title}
               </p>
             </Link>

@@ -21,7 +21,7 @@ export default function Organizations() {
           transition={{ duration: 0.5 }}
           className="flex items-center gap-3 mb-12"
         >
-          <span className="text-xs font-mono text-accent-indigo uppercase tracking-widest">05 — Organizations</span>
+          <span className="text-xs font-mono text-[var(--accent-rose)] uppercase tracking-widest">05 — Organizations</span>
           <div className="flex-1 h-px bg-[var(--border)]" />
         </motion.div>
 
@@ -43,17 +43,17 @@ export default function Organizations() {
                 initial={{ opacity: 0, y: 24 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: 0.15 + i * 0.1 }}
-                className="glass rounded-xl p-6 hover:border-accent-indigo/30 transition-all group"
+                className="glass rounded-xl p-6 hover:border-[var(--accent-orchid)]/30 transition-all group"
               >
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-xl bg-gradient-accent flex items-center justify-center shadow-lg shadow-accent-indigo/20 group-hover:scale-110 transition-transform">
+                  <div className="w-10 h-10 rounded-xl bg-gradient-accent flex items-center justify-center shadow-lg shadow-[var(--accent-rose)]/20 group-hover:scale-110 transition-transform">
                     {Icon && <Icon size={18} className="text-white" />}
                   </div>
                   <div>
                     <h3 className="font-jakarta font-semibold text-[var(--text-primary)] text-sm leading-tight">
                       {org.name}
                     </h3>
-                    <p className="text-xs text-accent-indigo font-medium">{org.role}</p>
+                    <p className="text-xs text-[var(--accent-orchid)] font-medium">{org.role}</p>
                   </div>
                 </div>
 

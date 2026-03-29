@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { motion, type Variants } from "framer-motion";
+import { motion } from "framer-motion";
 import { Mail, ArrowDown, Download } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/ui/Icons";
 
@@ -35,42 +35,41 @@ export default function Hero() {
     return () => clearTimeout(timeout);
   }, [displayed, deleting, roleIndex]);
 
-  const containerVariants: Variants = {
-    hidden: {},
-    visible: { transition: { staggerChildren: 0.12 } },
-  };
-
-  const itemVariants: Variants = {
-    hidden: { opacity: 0, y: 24 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } },
-  };
-
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Dot grid background */}
-      <div className="absolute inset-0 dot-grid opacity-60" />
+      {/* Gradient mesh background */}
+      <div className="absolute inset-0 gradient-mesh" />
+      <div className="absolute inset-0 dot-grid opacity-40" />
 
-      {/* Gradient orbs */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-accent-blue/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-accent-violet/10 rounded-full blur-3xl pointer-events-none" />
+      {/* Floating gradient orbs */}
+      <div className="absolute top-1/4 left-[15%] w-72 h-72 rounded-full bg-[var(--accent-rose)] opacity-[0.06] blur-3xl pointer-events-none animate-float" />
+      <div className="absolute bottom-1/3 right-[15%] w-80 h-80 rounded-full bg-[var(--accent-orchid)] opacity-[0.06] blur-3xl pointer-events-none animate-float" style={{ animationDelay: "-3s" }} />
+      <div className="absolute top-1/2 left-1/2 w-64 h-64 rounded-full bg-[var(--accent-teal)] opacity-[0.04] blur-3xl pointer-events-none animate-float" style={{ animationDelay: "-1.5s" }} />
+
+      {/* Decorative scatter dots (data-viz feel) */}
+      <div className="scatter-dots" />
 
       <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          className="flex flex-col items-center gap-6"
-        >
+        <div className="flex flex-col items-center gap-6">
           {/* Badge */}
-          <motion.div variants={itemVariants}>
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-accent-indigo/30 bg-accent-indigo/10 text-accent-indigo text-sm font-medium">
-              <span className="w-1.5 h-1.5 rounded-full bg-accent-indigo animate-pulse" />
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+          >
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[var(--accent-rose)]/30 bg-[var(--accent-rose)]/10 text-[var(--accent-rose)] text-sm font-medium">
+              <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent-rose)] animate-pulse" />
               Open to internships &amp; full-time roles
             </span>
           </motion.div>
 
           {/* Greeting + name */}
-          <motion.div variants={itemVariants} className="space-y-2">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="space-y-2"
+          >
             <p className="text-[var(--text-secondary)] font-inter text-lg">
               Hi, I&apos;m
             </p>
@@ -80,16 +79,23 @@ export default function Hero() {
           </motion.div>
 
           {/* Typewriter role */}
-          <motion.div variants={itemVariants} className="h-10 flex items-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.35 }}
+            className="h-10 flex items-center"
+          >
             <span className="font-jakarta text-2xl md:text-3xl text-[var(--text-secondary)]">
               {displayed}
-              <span className="inline-block w-0.5 h-7 bg-accent-indigo ml-1 animate-blink align-middle" />
+              <span className="inline-block w-0.5 h-7 bg-[var(--accent-orchid)] ml-1 animate-blink align-middle" />
             </span>
           </motion.div>
 
           {/* Tagline */}
           <motion.p
-            variants={itemVariants}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.45 }}
             className="max-w-2xl text-[var(--text-secondary)] text-lg leading-relaxed"
           >
             I turn messy data into actionable insights — and build intelligent
@@ -98,8 +104,10 @@ export default function Hero() {
 
           {/* Stats strip */}
           <motion.div
-            variants={itemVariants}
-            className="flex flex-wrap justify-center gap-6 py-2"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.55 }}
+            className="flex flex-wrap justify-center gap-8 py-3"
           >
             {[
               { value: "2×", label: "Hackathon Winner" },
@@ -107,25 +115,30 @@ export default function Hero() {
               { value: "3.75", label: "GPA" },
               { value: "10K+", label: "Records Analyzed" },
             ].map(({ value, label }) => (
-              <div key={label} className="text-center">
-                <p className="font-jakarta font-bold text-2xl gradient-text">{value}</p>
+              <div key={label} className="text-center group">
+                <p className="font-jakarta font-bold text-2xl gradient-text-warm group-hover:scale-110 transition-transform">{value}</p>
                 <p className="text-xs text-[var(--text-muted)]">{label}</p>
               </div>
             ))}
           </motion.div>
 
           {/* CTAs */}
-          <motion.div variants={itemVariants} className="flex flex-wrap gap-4 justify-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.65 }}
+            className="flex flex-wrap gap-4 justify-center"
+          >
             <a
               href="#projects"
-              className="px-6 py-3 rounded-xl bg-gradient-accent text-white font-semibold text-sm hover:opacity-90 transition-all hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-accent-indigo/20"
+              className="px-6 py-3 rounded-xl bg-gradient-accent text-white font-semibold text-sm hover:opacity-90 transition-all hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-[var(--accent-rose)]/20"
             >
               View My Work
             </a>
             <a
               href="/resume.pdf"
               download
-              className="px-6 py-3 rounded-xl border border-[var(--border)] text-[var(--text-primary)] font-semibold text-sm hover:border-accent-indigo/60 transition-all hover:scale-[1.02] active:scale-[0.98] flex items-center gap-2"
+              className="px-6 py-3 rounded-xl border border-[var(--border)] text-[var(--text-primary)] font-semibold text-sm hover:border-[var(--accent-orchid)]/60 transition-all hover:scale-[1.02] active:scale-[0.98] flex items-center gap-2"
             >
               <Download size={16} />
               Download Resume
@@ -133,7 +146,12 @@ export default function Hero() {
           </motion.div>
 
           {/* Social links */}
-          <motion.div variants={itemVariants} className="flex items-center gap-5">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.75 }}
+            className="flex items-center gap-5"
+          >
             {[
               { href: "https://github.com/Suruchi-Bista", Icon: GithubIcon, label: "GitHub" },
               { href: "https://www.linkedin.com/in/suruchi-bista/", Icon: LinkedinIcon, label: "LinkedIn" },
@@ -145,13 +163,13 @@ export default function Hero() {
                 target={href.startsWith("http") ? "_blank" : undefined}
                 rel="noopener noreferrer"
                 aria-label={label}
-                className="p-2.5 rounded-lg border border-[var(--border)] text-[var(--text-muted)] hover:text-accent-indigo hover:border-accent-indigo/50 transition-all"
+                className="p-2.5 rounded-lg border border-[var(--border)] text-[var(--text-muted)] hover:text-[var(--accent-rose)] hover:border-[var(--accent-rose)]/50 transition-all"
               >
                 <Icon size={18} />
               </a>
             ))}
           </motion.div>
-        </motion.div>
+        </div>
 
         {/* Scroll indicator */}
         <motion.div

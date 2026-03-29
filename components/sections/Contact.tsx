@@ -19,7 +19,7 @@ export default function Contact() {
           transition={{ duration: 0.5 }}
           className="flex items-center gap-3 mb-12"
         >
-          <span className="text-xs font-mono text-accent-indigo uppercase tracking-widest">08 — Contact</span>
+          <span className="text-xs font-mono text-[var(--accent-rose)] uppercase tracking-widest">08 — Contact</span>
           <div className="flex-1 h-px bg-[var(--border)]" />
         </motion.div>
 
@@ -42,16 +42,16 @@ export default function Contact() {
             {/* Email CTA */}
             <a
               href="mailto:suruchibista1@gmail.com"
-              className="flex items-center gap-4 glass rounded-xl p-5 hover:border-accent-indigo/40 transition-all group"
+              className="flex items-center gap-4 glass rounded-xl p-5 hover:border-[var(--accent-rose)]/40 transition-all group"
             >
-              <div className="w-11 h-11 rounded-xl bg-gradient-accent flex items-center justify-center flex-shrink-0 shadow-lg shadow-accent-indigo/20 group-hover:scale-110 transition-transform">
+              <div className="w-11 h-11 rounded-xl bg-gradient-accent flex items-center justify-center flex-shrink-0 shadow-lg shadow-[var(--accent-rose)]/20 group-hover:scale-110 transition-transform">
                 <Mail size={18} className="text-white" />
               </div>
               <div className="flex-1">
                 <p className="text-xs text-[var(--text-muted)] mb-0.5">Email me at</p>
                 <p className="font-semibold text-[var(--text-primary)]">suruchibista1@gmail.com</p>
               </div>
-              <Send size={16} className="text-[var(--text-muted)] group-hover:text-accent-indigo transition-colors" />
+              <Send size={16} className="text-[var(--text-muted)] group-hover:text-[var(--accent-rose)] transition-colors" />
             </a>
 
             {/* Social links row */}
@@ -60,7 +60,7 @@ export default function Contact() {
                 href="https://www.linkedin.com/in/suruchi-bista/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 glass rounded-xl p-4 hover:border-accent-indigo/40 transition-all group"
+                className="flex items-center gap-3 glass rounded-xl p-4 hover:border-[var(--accent-orchid)]/40 transition-all group"
               >
                 <div className="w-9 h-9 rounded-lg bg-[#0A66C2]/20 border border-[#0A66C2]/30 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
                   <LinkedinIcon size={16} className="text-[#0A66C2]" />
@@ -75,7 +75,7 @@ export default function Contact() {
                 href="https://github.com/Suruchi-Bista"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 glass rounded-xl p-4 hover:border-accent-indigo/40 transition-all group"
+                className="flex items-center gap-3 glass rounded-xl p-4 hover:border-[var(--accent-orchid)]/40 transition-all group"
               >
                 <div className="w-9 h-9 rounded-lg bg-[var(--surface-2)] border border-[var(--border)] flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
                   <GithubIcon size={16} className="text-[var(--text-primary)]" />

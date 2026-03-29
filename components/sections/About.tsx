@@ -27,7 +27,7 @@ export default function About() {
           transition={{ duration: 0.5 }}
           className="flex items-center gap-3 mb-12"
         >
-          <span className="text-xs font-mono text-accent-indigo uppercase tracking-widest">01 — About</span>
+          <span className="text-xs font-mono text-[var(--accent-rose)] uppercase tracking-widest">01 — About</span>
           <div className="flex-1 h-px bg-[var(--border)]" />
         </motion.div>
 
@@ -40,7 +40,7 @@ export default function About() {
             className="flex justify-center lg:justify-start"
           >
             <div className="relative">
-              <div className="w-64 h-64 md:w-80 md:h-80 rounded-2xl overflow-hidden gradient-border glow-indigo">
+              <div className="w-64 h-64 md:w-80 md:h-80 rounded-2xl overflow-hidden gradient-border glow-orchid">
                 <Image
                   src="/images/profile/headshot.jpg"
                   alt="Suruchi Bista"
@@ -51,7 +51,7 @@ export default function About() {
                 />
               </div>
               {/* Floating badge */}
-              <div className="absolute -bottom-4 -right-4 glass rounded-xl px-4 py-2 shadow-lg">
+              <div className="absolute -bottom-4 -right-4 glass rounded-xl px-4 py-2 shadow-lg animate-pulse-glow">
                 <p className="text-xs text-[var(--text-muted)]">Graduating</p>
                 <p className="font-jakarta font-semibold text-[var(--text-primary)] text-sm">May 2026</p>
               </div>
@@ -97,7 +97,7 @@ export default function About() {
                   key={text}
                   className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[var(--surface-2)] border border-[var(--border)] text-sm text-[var(--text-secondary)]"
                 >
-                  <Icon size={13} className="text-accent-indigo" />
+                  <Icon size={13} className="text-[var(--accent-orchid)]" />
                   {text}
                 </span>
               ))}
@@ -115,9 +115,9 @@ export default function About() {
           {stats.map(({ value, label, sub }) => (
             <div
               key={label}
-              className="glass rounded-xl p-5 text-center hover:border-accent-indigo/40 transition-all group"
+              className="glass rounded-xl p-5 text-center hover:border-[var(--accent-rose)]/40 transition-all group"
             >
-              <p className="font-jakarta font-bold text-3xl gradient-text group-hover:scale-105 transition-transform">
+              <p className="font-jakarta font-bold text-3xl gradient-text-warm group-hover:scale-105 transition-transform">
                 {value}
               </p>
               <p className="font-semibold text-[var(--text-primary)] text-sm mt-1">{label}</p>

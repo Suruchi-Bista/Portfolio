@@ -56,7 +56,7 @@ export default function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
+              className="text-sm text-[var(--text-secondary)] hover:text-[var(--accent-rose)] transition-colors"
             >
               {link.label}
             </a>
@@ -69,7 +69,7 @@ export default function Navbar() {
           {mounted && (
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-lg text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--surface-2)] transition-all"
+              className="p-2 rounded-lg text-[var(--text-secondary)] hover:text-[var(--accent-orchid)] hover:bg-[var(--surface-2)] transition-all"
               aria-label="Toggle theme"
             >
               {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
@@ -80,7 +80,7 @@ export default function Navbar() {
           <a
             href="/resume.pdf"
             download
-            className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[var(--border)] text-sm text-[var(--text-secondary)] hover:border-accent-indigo hover:text-[var(--text-primary)] transition-all"
+            className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[var(--border)] text-sm text-[var(--text-secondary)] hover:border-[var(--accent-rose)] hover:text-[var(--text-primary)] transition-all"
           >
             <Download size={14} />
             Resume
@@ -105,7 +105,7 @@ export default function Navbar() {
               key={link.href}
               href={link.href}
               onClick={() => setMenuOpen(false)}
-              className="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] py-1 transition-colors"
+              className="text-sm text-[var(--text-secondary)] hover:text-[var(--accent-rose)] py-1 transition-colors"
             >
               {link.label}
             </a>
